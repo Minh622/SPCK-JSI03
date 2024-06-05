@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Phone accessories Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/Signin.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img
+                  src="/spck/assets/imagescopy/z5246028347758_179da7404d08eb67514820bb7574eacd.jpg"
+                  alt=""
+                  style="width: 60px"
+                />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li>
+                  <a href="./index.html" style="color: rgb(241, 241, 241)"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="./shop.html" style="color: rgb(247, 247, 247)"
+                    >Our Shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./product-details.html"
+                    style="color: rgb(255, 255, 255)"
+                    >Product Details</a
+                  >
+                </li>
+                <li>
+                  <a href="./contact.html" style="color: rgb(253, 253, 253)"
+                    >Contact Us</a
+                  >
+                </li>
+                <li><a href="./Signin.html">Sign In</a></li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="account-box" id="login">
+        <h2>Register</h2>
+        <form>
+          <div class="user-box">
+            <input
+              id="email"
+              type="text"
+              name=""
+              pattern=""
+              required=""
+              placeholder="Email"
+            />
+          </div>
+          <div class="user-box">
+            <input
+              id="password"
+              type="password"
+              pattern=""
+              name=""
+              required=""
+              placeholder="Password"
+            />
+          </div>
+          <div class="selector">
+            <a class="account" href="./Signin.html">Already have an account?</a>
+            <button type="submit" class="btn" id="submit">
+              <a href="./index.html" id="submit">Submit</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC5XwAKgvYObzKf-jlCAsCuoLtsId_R_2Q",
+        authDomain: "account-4c43b.firebaseapp.com",
+        projectId: "account-4c43b",
+        storageBucket: "account-4c43b.appspot.com",
+        messagingSenderId: "125186704983",
+        appId: "1:125186704983:web:2af1f0d41e71f4b42f4512",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      import {
+        getDatabase,
+        ref,
+        child,
+        get,
+        set,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+      const db = getDatabase();
+
+      let email = document.getElementById("email");
+
+      let submit = document.getElementById("submit");
+
+      function AddData() {
+        set(ref(db, "User"), {
+          email: email.value,
+        })
+          .then(() => {
+            alert("Data Added Succesfully");
+          })
+          .catch(() => {
+            alert("Unsuccessful");
+            console.log(error);
+          });
+      }
+    </script>
+  </body>
+</html>

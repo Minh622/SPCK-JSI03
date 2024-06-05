@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../JSA03"
+	},
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../SS3"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "JSI03"
+  }
+}
